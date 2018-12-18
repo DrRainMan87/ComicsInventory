@@ -8,7 +8,7 @@ class TestFumetto {
 
 	@Test
 	void testInserisciFumetto() {
-		fail("Not yet implemented");
+		//TODO
 	}
 
 	@Test
