@@ -3,12 +3,15 @@ package test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import app.*;
 
 class TestFumetto {
 
 	@Test
 	void testInserisciFumetto() {
 		//TODO
+		Fumetto f1 = new Fumetto();
+		f1.creaFumetto(f1);
 	}
 
 	@Test
