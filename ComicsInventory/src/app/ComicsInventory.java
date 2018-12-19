@@ -2,8 +2,6 @@ package app;
 
 import java.util.Scanner;
 
-import javax.xml.crypto.Data;
-
 public class ComicsInventory {
 	private static Scanner input;
 	
