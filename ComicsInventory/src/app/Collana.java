@@ -18,6 +18,10 @@ public class Collana {
 		this.listaFumetti = listaFumetti;
 	}
 	
+	public void inserisciFumettoInCollana(Fumetto f) {
+		//TODO
+	}
+	
 	public Collana () {
 		listaFumetti = new ArrayList<Fumetto>();
 	}

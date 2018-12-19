@@ -10,8 +10,8 @@ class TestFumetto {
 	@Test
 	void testInserisciFumetto() {
 		//TODO
-		Fumetto f1 = new Fumetto();
-		f1.creaFumetto(f1);
+		//Fumetto f1 = new Fumetto();
+		//f1.creaFumetto(f1);
 	}
 
 	@Test
