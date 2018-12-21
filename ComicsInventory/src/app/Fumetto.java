@@ -17,7 +17,7 @@ public class Fumetto {
 		this.titolo = titolo;
 		this.dataDiUscita = dataDiUscita;
 		this.ordinato = ordinato;
-		this.setMancante(mancante);
+		this.mancante = mancante;
 		this.descrizione = descrizione;
 	}
 
