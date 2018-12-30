@@ -7,11 +7,13 @@ public class Fumetto {
 	private int numero;
 	private String titolo;
 	private Date dataDiUscita;
-	private boolean ordinato = false; //boolean se ordinato in fumetteria/edicola
-	private boolean mancante = false; //boolean se il fumetto e' mancante
+	private boolean ordinato; //boolean se ordinato in fumetteria/edicola
+	private boolean mancante; //boolean se il fumetto e' mancante
 	private String descrizione;
+	private Integer idCollana;
 	
-	public Fumetto(int id, int numero, String titolo, Date dataDiUscita, boolean ordinato, boolean mancante, String descrizione) {
+
+	public Fumetto(int id, int numero, String titolo, Date dataDiUscita, boolean ordinato, boolean mancante, String descrizione, Integer idCollana) {
 		this.id = id;
 		this.numero = numero;
 		this.titolo = titolo;
@@ -19,12 +21,20 @@ public class Fumetto {
 		this.ordinato = ordinato;
 		this.mancante = mancante;
 		this.descrizione = descrizione;
+		this.idCollana = idCollana;
 	}
 
 	public Fumetto() {
 		
 	}
 	
+	public Integer getIdCollana() {
+		return idCollana;
+	}
+	
+	public void setIdCollana(Integer idCollana) {
+		this.idCollana = idCollana;
+	}
 		
 	public int getNumero() {
 		return numero;
