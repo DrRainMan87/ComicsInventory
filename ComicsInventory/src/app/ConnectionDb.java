@@ -50,4 +50,17 @@ public class ConnectionDb {
 			}
 		}
 	}
+	
+	//apri e chiudi connessione andranno richiamate dentro un try catch
+	public void apriConnessioneDb(){
+		String connectionString="jdbc:mysql://localhost:3306/ComicsInventoryDb?user=ComicsInventoryUser&password=ComicsInventoryUser1&serverTimezone=UTC";
+		
+	}
+	
+	public void chiudiConnessioneDb(){
+		String connectionString="jdbc:mysql://localhost:3306/ComicsInventoryDb?user=ComicsInventoryUser&password=ComicsInventoryUser1&serverTimezone=UTC";
+		
+		if (connection != null)
+			connection.close();
+	}
 }
