@@ -52,15 +52,31 @@ public class ConnectionDb {
 	}
 	
 	//apri e chiudi connessione andranno richiamate dentro un try catch
-	public void apriConnessioneDb(){
+	public Connection apriConnessioneDb(){
 		String connectionString="jdbc:mysql://localhost:3306/ComicsInventoryDb?user=ComicsInventoryUser&password=ComicsInventoryUser1&serverTimezone=UTC";
-		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		Connection connection = null;
+
+			try {
+				connection = DriverManager.getConnection(connectionString);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return connection;
 	}
-	
-	public void chiudiConnessioneDb(){
-		String connectionString="jdbc:mysql://localhost:3306/ComicsInventoryDb?user=ComicsInventoryUser&password=ComicsInventoryUser1&serverTimezone=UTC";
-		
+	//Rileggere differenza tra try catch e throws
+	public void chiudiConnessioneDb(Connection connection){
 		if (connection != null)
-			connection.close();
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }
