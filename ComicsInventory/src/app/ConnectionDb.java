@@ -64,7 +64,6 @@ public class ConnectionDb {
 			try {
 				connection = DriverManager.getConnection(connectionString);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			return connection;
@@ -75,7 +74,6 @@ public class ConnectionDb {
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
