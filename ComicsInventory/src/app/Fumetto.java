@@ -60,7 +60,7 @@ public class Fumetto {
 		this.dataDiUscita = dataDiUscita;
 	}
 
-	public boolean isOrdinato() {
+	public boolean getOrdinato() {
 		return ordinato;
 	}
 

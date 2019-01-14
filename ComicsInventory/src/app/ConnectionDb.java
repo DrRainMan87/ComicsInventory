@@ -47,6 +47,7 @@ public class ConnectionDb {
 					connection.close();
 			} catch (SQLException e) {
 				// gestione errore in chiusura
+				//Potrebbe essere necessaria una Rollback
 			}
 		}
 	}
