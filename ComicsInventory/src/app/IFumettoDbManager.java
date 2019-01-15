@@ -6,8 +6,8 @@ public interface IFumettoDbManager {
 	
 	public void modificaFumetto(Fumetto f);
 	
-	public void cancellaFumetto();
+	public void cancellaFumetto(Fumetto f);
 	
-	public void cercaFumetto();
+	public void cercaFumetto(Fumetto f);
 
 }

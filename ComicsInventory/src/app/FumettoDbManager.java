@@ -40,11 +40,24 @@ public class FumettoDbManager implements IFumettoDbManager {
 		//TODO
 	}
 	
-	public void cancellaFumetto() {
+	public void cancellaFumetto(Fumetto f) {
 		//TODO
+		ConnectionDb connect = new ConnectionDb();
+		Connection conn = connect.apriConnessioneDb();
+		PreparedStatement prepared;
+		try {			
+			prepared = conn.prepareStatement(
+					"delete fumetto where id = ?");
+			prepared.setInt(1, f.getId());
+			prepared.executeUpdate();			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		connect.chiudiConnessioneDb(conn);
 	}
 	
-	public void cercaFumetto() {
+	public void cercaFumetto(Fumetto f) {
 		//TODO
 	}
 	
