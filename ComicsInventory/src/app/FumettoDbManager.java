@@ -59,6 +59,19 @@ public class FumettoDbManager implements IFumettoDbManager {
 	
 	public void cercaFumetto(Fumetto f) {
 		//TODO
+		ConnectionDb connect = new ConnectionDb();
+		Connection conn = connect.apriConnessioneDb();
+		PreparedStatement prepared;
+		try {			
+			prepared = conn.prepareStatement(
+					"select * from fumetto where id = ?");
+			prepared.setInt(1, f.getId());
+			prepared.executeQuery();			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		connect.chiudiConnessioneDb(conn);
 	}
 	
 	public int getMaxId() {
