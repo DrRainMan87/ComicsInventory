@@ -3,6 +3,7 @@ package app;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class FumettoDbManager implements IFumettoDbManager {
@@ -37,11 +38,11 @@ public class FumettoDbManager implements IFumettoDbManager {
 	}
 	
 	public void modificaFumetto(Fumetto f) {
-		//TODO
+		//TODO - Forse come parametri ci vogliono i dati da modificare e se ci sono dei null quei campi non andranno modificati
 	}
 	
 	public void cancellaFumetto(Fumetto f) {
-		//TODO
+		//Da Testare
 		ConnectionDb connect = new ConnectionDb();
 		Connection conn = connect.apriConnessioneDb();
 		PreparedStatement prepared;
@@ -58,7 +59,7 @@ public class FumettoDbManager implements IFumettoDbManager {
 	}
 	
 	public void cercaFumetto(Fumetto f) {
-		//TODO
+		//Da Testare
 		ConnectionDb connect = new ConnectionDb();
 		Connection conn = connect.apriConnessioneDb();
 		PreparedStatement prepared;
@@ -76,6 +77,21 @@ public class FumettoDbManager implements IFumettoDbManager {
 	
 	public int getMaxId() {
 		//TODO - query che trova l'id MAX sul DB e lo restituisce, poi dove lo richiamo faccio +1
-		return 0;
+		//Da Testare
+				ConnectionDb connect = new ConnectionDb();
+				Connection conn = connect.apriConnessioneDb();
+				PreparedStatement prepared;
+				int resultId = 0;
+				try {			
+					prepared = conn.prepareStatement(
+							"SELECT max(id) FROM fumetto");
+					ResultSet result = prepared.executeQuery();	
+					resultId = result.getInt(1);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				connect.chiudiConnessioneDb(conn);
+		return resultId;
 	}
 }
