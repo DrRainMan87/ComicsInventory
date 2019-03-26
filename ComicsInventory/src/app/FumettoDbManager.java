@@ -88,7 +88,6 @@ public class FumettoDbManager implements IFumettoDbManager {
 					ResultSet result = prepared.executeQuery();	
 					resultId = result.getInt(1);
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				connect.chiudiConnessioneDb(conn);

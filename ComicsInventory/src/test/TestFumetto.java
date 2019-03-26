@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
+import app.FumettoDbManager;
 import org.junit.jupiter.api.Test;
 
 import app.ComicsInventory;
@@ -20,17 +21,30 @@ class TestFumetto {
 
 	@Test
 	void testModificaFumetto() {
-		fail("Not yet implemented");
+		Fumetto f1 = new Fumetto();
+		ComicsInventory ci = new ComicsInventory();
+		Fumetto fumettoCreato = ci.creaFumetto(f1);
 	}
 
 	@Test
 	void testCancellaFumetto() {
-		fail("Not yet implemented");
+		Fumetto f1 = new Fumetto();
+		ComicsInventory ci = new ComicsInventory();
+		Fumetto fumettoCreato = ci.creaFumetto(f1);
 	}
 
 	@Test
 	void testCercaFumetto() {
-		fail("Not yet implemented");
+		Fumetto f1 = new Fumetto();
+		ComicsInventory ci = new ComicsInventory();
+		Fumetto fumettoCreato = ci.creaFumetto(f1);
+	}
+
+	@Test
+	void testGetMaxId() {
+		FumettoDbManager fDB = new FumettoDbManager();
+		int result = fDB.getMaxId();
+		System.out.println(result);
 	}
 
 }

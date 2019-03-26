@@ -1,15 +1,9 @@
 package test;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
+import app.ConnectionDb;
 import org.junit.jupiter.api.Test;
 
-import app.ConnectionDb;
+import java.sql.*;
 
 class TestConnessioneDb {
 
@@ -27,13 +21,13 @@ class TestConnessioneDb {
 		try {
 			prepared = conn
 					.prepareStatement("insert into fumetto (id, titolo, numero, data_uscita, ordinato, mancante, descrizione) values (?,?,?,?,?,?,?)");
-			prepared.setInt(1, 2);
-			prepared.setString(2, "Titolo di prova2");
+			prepared.setInt(1, 3);
+			prepared.setString(2, "Titolo di prova3");
 			prepared.setInt(3, 2);
 			prepared.setDate(4, Date.valueOf("2019-01-10"));
 			prepared.setString(5, "F");
 			prepared.setString(6, String.valueOf('F'));
-			prepared.setString(7, "Descrizione di prova2");
+			prepared.setString(7, "Descrizione di prova3");
 			prepared.executeUpdate();
 			Statement stm = conn.createStatement();
 			ResultSet rs = stm.executeQuery("select * from fumetto");
