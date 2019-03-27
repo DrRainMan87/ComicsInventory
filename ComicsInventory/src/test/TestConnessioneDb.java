@@ -25,12 +25,12 @@ class TestConnessioneDb {
 					.prepareStatement("insert into fumetto (id, titolo, numero, data_uscita, ordinato, mancante, descrizione) values (?,?,?,?,?,?,?)");
 			//prepared.setInt(1, 3);
 			prepared.setInt(1, fDB.getMaxId()+1);
-			prepared.setString(2, "Titolo di prova4");
+			prepared.setString(2, "Titolo di prova5");
 			prepared.setInt(3, 2);
 			prepared.setDate(4, Date.valueOf("2019-01-10"));
 			prepared.setString(5, "F");
 			prepared.setString(6, String.valueOf('F'));
-			prepared.setString(7, "Descrizione di prova3");
+			prepared.setString(7, "Descrizione di prova5");
 			prepared.executeUpdate();
 			Statement stm = conn.createStatement();
 			ResultSet rs = stm.executeQuery("select * from fumetto");
