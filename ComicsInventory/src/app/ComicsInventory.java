@@ -14,9 +14,10 @@ public class ComicsInventory {
 		int idF = 0, numF = 0;
 		String titF, descrF, dataF;
 		boolean ordF = false, mancF = false;
-		
-		System.out.println("Inserire l'id del fumetto");
-		idF = input.nextInt();
+
+		//Commentati perche' messo getMaxId
+		//System.out.println("Inserire l'id del fumetto");
+		//idF = input.nextInt();
 		System.out.println("Inserire il nome del fumetto");
 		numF = input.nextInt();
 		System.out.println("Inserire il titolo del fumetto");

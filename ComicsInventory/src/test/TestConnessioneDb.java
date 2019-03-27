@@ -1,6 +1,7 @@
 package test;
 
 import app.ConnectionDb;
+import app.FumettoDbManager;
 import org.junit.jupiter.api.Test;
 
 import java.sql.*;
@@ -12,17 +13,19 @@ class TestConnessioneDb {
 		ConnectionDb connect = new ConnectionDb();
 		connect.connessioneDb();
 	}
-	
+
 	@Test
 	void testApriChiudiConnessioneDb() {
 		ConnectionDb connect = new ConnectionDb();
+		FumettoDbManager fDB = new FumettoDbManager();
 		Connection conn = connect.apriConnessioneDb();
 		PreparedStatement prepared;
 		try {
 			prepared = conn
 					.prepareStatement("insert into fumetto (id, titolo, numero, data_uscita, ordinato, mancante, descrizione) values (?,?,?,?,?,?,?)");
-			prepared.setInt(1, 3);
-			prepared.setString(2, "Titolo di prova3");
+			//prepared.setInt(1, 3);
+			prepared.setInt(1, fDB.getMaxId()+1);
+			prepared.setString(2, "Titolo di prova4");
 			prepared.setInt(3, 2);
 			prepared.setDate(4, Date.valueOf("2019-01-10"));
 			prepared.setString(5, "F");
