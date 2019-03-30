@@ -39,7 +39,6 @@ class TestConnessioneDb {
 				.println(rs.getString("titolo") + " " + rs.getString("numero") );
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		connect.chiudiConnessioneDb(conn);

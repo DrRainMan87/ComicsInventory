@@ -56,20 +56,25 @@ public class FumettoDbManager implements IFumettoDbManager {
         connect.chiudiConnessioneDb(conn);
     }
 
-    public void cercaFumetto(Fumetto f) {
+    public boolean cercaFumetto(Fumetto f) {
         //Da Testare
         ConnectionDb connect = new ConnectionDb();
         Connection conn = connect.apriConnessioneDb();
         PreparedStatement prepared;
+        boolean find = false;
         try {
             prepared = conn.prepareStatement(
                     "select * from fumetto where id = ?");
             prepared.setInt(1, f.getId());
             prepared.executeQuery();
+            if (prepared.getResultSet() != null){
+                find = true;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         connect.chiudiConnessioneDb(conn);
+        return find;
     }
 
     //Query che trova l'id MAX sul DB e lo restituisce, poi dove lo richiamo faccio +1

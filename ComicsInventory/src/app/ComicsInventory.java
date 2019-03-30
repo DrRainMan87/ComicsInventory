@@ -74,7 +74,16 @@ public class ComicsInventory {
 	}
 	
 	public static void main(String[] args) {
-
+		System.out.println("##### Comics Inventory #####\n");
+		System.out.println("Scegliere 0 per uscire\n");
+		System.out.println("Scegliere 1 per inserire una nuova Collana\n");
+		System.out.println("Scegliere 2 per inserire un nuovo Fumetto\n");
+		System.out.println("Scegliere 3 per vedere tutte le Collane\n");
+		System.out.println("Scegliere 4 per vedere tutti i Fumetti\n");
+		System.out.println("Scegliere 5 per vedere i Fumetti di una Collana\n");
+		System.out.println("Scegliere 6 per cercare un Fumetto\n");
+		System.out.println("Scegliere 7 per cancellare una Collana\n");
+		System.out.println("Scegliere 8 per cancellare un Fumetto\n");
 	}
 
 }

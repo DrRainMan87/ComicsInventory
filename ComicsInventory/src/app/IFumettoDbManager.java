@@ -8,6 +8,6 @@ public interface IFumettoDbManager {
 	
 	public void cancellaFumetto(Fumetto f);
 	
-	public void cercaFumetto(Fumetto f);
+	public boolean cercaFumetto(Fumetto f);
 
 }
