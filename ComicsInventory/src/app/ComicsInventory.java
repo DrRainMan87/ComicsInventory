@@ -53,12 +53,12 @@ public class ComicsInventory {
 	}
 	
 	public Collana creaCollana(Collana c) {
-		int idC;
+		//int idC;
 		String nomeC, casaEditriceC, descrizioneC;
 		input = new Scanner(System.in);
 
-		System.out.println("Inserire l'id della collana");
-		idC = input.nextInt();
+		//System.out.println("Inserire l'id della collana");
+		//idC = input.nextInt();
 		System.out.println("Inserire il nome della collana");
 		nomeC = input.next();
 		System.out.println("Inserire la casa editrice della collana");
@@ -66,10 +66,12 @@ public class ComicsInventory {
 		System.out.println("Inserire la descrizione della collana");
 		descrizioneC = input.next();
 		
-		c.setId(idC);
+		//c.setId(idC);
 		c.setNome(nomeC);
 		c.setCasaEditrice(casaEditriceC);
 		c.setDescrizione(descrizioneC);
+		CollanaDbManager cDbManager = new CollanaDbManager();
+		cDbManager.inserisciCollana(c);
 		return c;
 	}
 	

@@ -1,14 +1,26 @@
 package app;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class CollanaDbManager {
 	//TODO
 	public void inserisciCollana(Collana c) {
-		//TODO
+		//TODO - modificare metodo per la collana
+		ConnectionDb connect = new ConnectionDb();
+		Connection conn = connect.apriConnessioneDb();
+		PreparedStatement prepared;
+		try {
+			prepared = conn.prepareStatement(
+					"insert into collana (id, nome, casa_editrice, descrizione) values (?,?,?,?)");
+			prepared.setInt(1, this.getMaxId()+1);
+			prepared.setString(2, c.getNome());
+			prepared.setString(3, c.getCasaEditrice());
+			prepared.setString(4, c.getDescrizione());
+			prepared.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		connect.chiudiConnessioneDb(conn);
 	}
 	
 	public void modificaCollana(Collana c) {
