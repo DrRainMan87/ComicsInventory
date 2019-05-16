@@ -41,7 +41,7 @@ public class ComicsInventory {
 	      e.printStackTrace();
 	    }
 	    
-		f.setId(idF);
+		//f.setId(idF);
 		f.setNumero(numF);
 		f.setTitolo(titF);
 		f.setOrdinato(ordF);
