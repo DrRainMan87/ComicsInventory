@@ -3,6 +3,7 @@ package test;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import app.FumettoDbManager;
+import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
 import app.ComicsInventory;
@@ -12,7 +13,7 @@ class TestFumetto {
 
 	@Test
 	void testInserisciFumetto() {
-		//TODO
+		//Test OK
 		Fumetto f1 = new Fumetto();
 		f1.setNumero(2);
 		f1.setTitolo("Titolo di Test");
@@ -40,13 +41,24 @@ class TestFumetto {
 
 	@Test
 	void testCercaFumetto() {
+		//Test OK
 		Fumetto f1 = new Fumetto();
-		ComicsInventory ci = new ComicsInventory();
-		Fumetto fumettoCreato = ci.creaFumetto(f1);
+		f1.setId(1);
+		f1.setNumero(2);
+		f1.setTitolo("Titolo di Test");
+		f1.setOrdinato(false);
+		f1.setMancante(false);
+		f1.setDescrizione("Descrizione di Test2");
+		FumettoDbManager fDbManager = new FumettoDbManager();
+		boolean result = fDbManager.cercaFumetto(f1);
+		System.out.println(result);
+		//Assert.assertTrue(result);
+		//Assert.assertFalse(fDbManager.cercaFumetto(f1));
 	}
 
 	@Test
 	void testGetMaxId() {
+		//Test OK
 		FumettoDbManager fDB = new FumettoDbManager();
 		int result = fDB.getMaxId();
 		System.out.println(result);

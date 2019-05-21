@@ -19,7 +19,6 @@ public class FumettoDbManager implements IFumettoDbManager {
         try {
             prepared = conn.prepareStatement(
                     "insert into fumetto (id, titolo, numero, data_uscita, ordinato, mancante, descrizione) values (?,?,?,?,?,?,?)");
-            //Sarebbe da richiamare la getMaxId per l'id del fumetto
             prepared.setInt(1, this.getMaxId()+1);
             prepared.setString(2, f.getTitolo());
             prepared.setInt(3, f.getNumero());
@@ -57,18 +56,21 @@ public class FumettoDbManager implements IFumettoDbManager {
     }
 
     public boolean cercaFumetto(Fumetto f) {
-        //Da Testare
         ConnectionDb connect = new ConnectionDb();
         Connection conn = connect.apriConnessioneDb();
         PreparedStatement prepared;
         boolean find = false;
+        int resultId = 0;
         try {
             prepared = conn.prepareStatement(
                     "select * from fumetto where id = ?");
             prepared.setInt(1, f.getId());
-            prepared.executeQuery();
-            if (prepared.getResultSet() != null){
-                find = true;
+            ResultSet result = prepared.executeQuery();
+            while (result.next()) {
+                resultId = result.getInt(1);
+                if (resultId == f.getId()){
+                    find = true;
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
