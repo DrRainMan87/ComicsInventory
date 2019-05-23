@@ -34,9 +34,16 @@ class TestFumetto {
 
 	@Test
 	void testCancellaFumetto() {
+		//Test OK
 		Fumetto f1 = new Fumetto();
-		ComicsInventory ci = new ComicsInventory();
-		Fumetto fumettoCreato = ci.creaFumetto(f1);
+		f1.setId(4);
+		f1.setNumero(2);
+		f1.setTitolo("Titolo di Test");
+		f1.setOrdinato(false);
+		f1.setMancante(false);
+		f1.setDescrizione("Descrizione di Test");
+		FumettoDbManager fDbManager = new FumettoDbManager();
+		fDbManager.cancellaFumetto(f1);
 	}
 
 	@Test

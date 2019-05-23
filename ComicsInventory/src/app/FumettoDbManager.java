@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class FumettoDbManager implements IFumettoDbManager {
-    //TODO
+
     public void inserisciFumettoInCollana(Fumetto f) {
         //TODO
     }
@@ -36,17 +36,17 @@ public class FumettoDbManager implements IFumettoDbManager {
     }
 
     public void modificaFumetto(Fumetto f) {
-        //TODO - Forse come parametri ci vogliono i dati da modificare e se ci sono dei null quei campi non andranno modificati
+        //TODO - Forse come parametri ci vogliono i dati da modificare e se ci sono dei null quei campi non andranno modificati,
+        // va passato anche il fumetto da modificare
     }
 
     public void cancellaFumetto(Fumetto f) {
-        //Da Testare
         ConnectionDb connect = new ConnectionDb();
         Connection conn = connect.apriConnessioneDb();
         PreparedStatement prepared;
         try {
             prepared = conn.prepareStatement(
-                    "delete fumetto where id = ?");
+                    "delete from fumetto where id = ?");
             prepared.setInt(1, f.getId());
             prepared.executeUpdate();
         } catch (SQLException e) {
